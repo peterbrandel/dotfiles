@@ -26,4 +26,4 @@ sudo apt-get install -y python3-pip
 # nvim
 
 cp -r nvim ~/.config/nvim
-sh nvim/installer.sh
+sh nvim/installer.sh ~/.cache/dein

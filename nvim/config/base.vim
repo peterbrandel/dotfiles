@@ -22,11 +22,6 @@ set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-" set guifont=FiraCode-Regular:h13
-" set guifont=BitstreamVeraSansMono_NF:h13
-" set gfw=BitstreamVeraSansMono_NF:h13
-" set gfw=FiraCode-Regular:h13
-
 " deoplete
 let g:deoplete#enable_at_startup = 1
 inoremap <silent><expr> <TAB>
@@ -38,24 +33,41 @@ function! s:check_back_space() abort "{{{
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
 
+" ale
+
+let g:ale_elixir_elixir_ls_release='/home/pebra/src/elixir-ls/release'
+let g:ale_linters = {
+      \   'ruby': ['rubocop'],
+      \   'python': ['flake8', 'pylint'],
+      \   'javascript': ['eslint'],
+      \   'elixir': ['elixir-ls'],
+      \}
+let g:ale_fixers = {
+      \   'elixir': ['mix_format'],
+      \}
+
+let g:ale_completion_enabled = 1
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+let g:ale_linters_explicit = 1
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+
+
+" github vim-gh-line config
+let g:gh_line_map = '<leader>ghl'
+let g:gh_line_blame_map = '<leader>ghb'
+let g:gh_open_command = 'open ' " the whitespace here is important
+let g:gh_use_canonical = 1
+" copy github link to clipboard instead of opening the browser
+" let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
+
+" airline
+
 set background=dark
-
-" Example config in VimScript
-let g:tokyonight_style = "night"
-let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
-
-colorscheme tokyonight
-
-" true colors
-if (empty($TMUX))
-  if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
+colorscheme solarized8_flat
+let g:airline_theme = 'solarized'
