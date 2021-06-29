@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# setup tmux
+# tmux
 cp tmux.conf $HOME/.tmux.conf
 mkdir -p $HOME/.tmux/plugins
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
-# setup bash
+# bash
 cp bash/bashrc $HOME/.bashrc
 cp bash/bash_profile $HOME/.bash_profile
 cp -r bash/oh-my-bash $HOME/.oh-my-bash
@@ -23,7 +23,9 @@ fi
 sudo apt-get install -y python3-pip 
 
 # nvim
-
 cp -r nvim ~/.config/nvim
-sh nvim/installer.sh ~/.cache/dein
+sh nvim/installer.sh $HOME/.cache/dein
 gem install neovim
+
+# rg
+cp rg/rgignore $HOME/.rgignore
