@@ -42,18 +42,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tpope/vim-rails')
   call dein#add('skalnik/vim-vroom')
 
-  " erlang
-  call dein#add('vim-erlang/vim-erlang-runtime')
-
-  " elixir
-  call dein#add('elixir-editors/vim-elixir')
-
-  " rust
-  call dein#add('rust-lang/rust.vim')
-
-  " ds
-  call dein#add('szymonmaszke/vimpyter')
-
   " status bar
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')

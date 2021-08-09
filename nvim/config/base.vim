@@ -69,5 +69,5 @@ let g:gh_use_canonical = 1
 " airline
 
 set background=dark
-colorscheme solarized8_flat
-let g:airline_theme = 'solarized'
+colorscheme PaperColor
+let g:airline_theme = 'papercolor'
