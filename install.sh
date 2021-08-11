@@ -20,12 +20,20 @@ if ! command -v fzf &> /dev/null; then
   sudo apt-get install -y fzf
 fi
 
-sudo apt-get install -y python3-pip 
 
-# nvim
+# nvim 0.5.0 !!!
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+sudo apt-get install python-dev python-pip python3-dev python3-pip
+
+sudo apt-get install -y python3-pip python3-neovim
+
 cp -r nvim ~/.config/nvim
 sh nvim/installer.sh $HOME/.cache/dein
 gem install neovim
+python3 -m pip install neovim
 
 # rg
 cp rg/rgignore $HOME/.rgignore
