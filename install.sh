@@ -32,8 +32,13 @@ sudo apt-get install -y python3-pip python3-neovim
 
 cp -r nvim ~/.config/nvim
 sh nvim/installer.sh $HOME/.cache/dein
-gem install neovim
+sudo gem install neovim
 python3 -m pip install neovim
+
+# linters
+
+sudo gem install solargraph
+sudo gem install sorbet
 
 # rg
 cp rg/rgignore $HOME/.rgignore
