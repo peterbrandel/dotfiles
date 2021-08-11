@@ -46,10 +46,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tpope/vim-rails')
   call dein#add('skalnik/vim-vroom')
 
-  " uncomment if you work with shadowenv
-  call dein#add('Shopify/shadowenv.vim')
-  
-
   " colorschemes
   call dein#add('arcticicestudio/nord-vim')
   call dein#add('NLKNguyen/papercolor-theme')
