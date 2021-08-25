@@ -29,6 +29,7 @@
 alias vim="nvim"
 alias gcane="git commit -a --amend --no-edit"
 alias gb="git branch --sort=-committerdate"
+alias rg="rg --ignore-file ${HOME}/.rgignore"
 
 export TERM=screen-256color
 # cloudplatform: add Shopify clusters to your local kubernetes config
