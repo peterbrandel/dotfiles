@@ -21,14 +21,16 @@ if ! command -v fzf &> /dev/null; then
 fi
 
 
-# nvim 0.5.0 !!!
+# nvim >= 0.5.0 !!!
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt-get update
-sudo apt-get install -y neovim
-sudo apt-get install -y python-dev python-pip python3-dev python3-pip
-
-sudo apt-get install -y python3-pip python3-neovim
+sudo apt-get install -y neovim \
+  python-dev \
+  python-pip \
+  python3-dev \ 
+  python3-pip \
+  python3-neovim
 
 cp -r nvim ~/.config/nvim
 sh nvim/installer.sh $HOME/.cache/dein
@@ -36,7 +38,6 @@ sudo gem install neovim
 python3 -m pip install neovim
 
 # linters
-
 sudo gem install solargraph
 sudo gem install sorbet
 
