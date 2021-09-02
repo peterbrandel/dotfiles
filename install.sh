@@ -25,17 +25,14 @@ fi
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt-get update
-sudo apt-get install -y neovim \
-  python-dev \
-  python-pip \
-  python3-dev \ 
-  python3-pip \
-  python3-neovim
+
+sudo apt-get install -y neovim python-dev python3-pip python3-dev python3-pip python3-neovim
 
 cp -r nvim ~/.config/nvim
 sh nvim/installer.sh $HOME/.cache/dein
 sudo gem install neovim
 python3 -m pip install neovim
+python3 -m pip install msgpack
 
 # linters
 sudo gem install solargraph
