@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+declare -r dotfile_dir="${PWD}"
+
 # tmux
 cp tmux.conf $HOME/.tmux.conf
 mkdir -p $HOME/.tmux/plugins
@@ -44,4 +46,4 @@ for d in $HOME/src/github.com/Shopify/*; do
 done
 
 # rg
-cp rg/rgignore $HOME/.rgignore
+cp $dotfile_dir/rg/rgignore $HOME/.rgignore
