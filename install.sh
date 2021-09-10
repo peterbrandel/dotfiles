@@ -24,9 +24,10 @@ fi
 
 
 # install some more recent versions of software I need via nix
-
+nix-channel --update && nix upgrade-nix
 nix-env -iA nixpkgs.neovim
 nix-env -iA nixpkgs.fzf
+
 # nvim >= 0.5.0 !!!
 # sudo apt-get install -y software-properties-common
 # sudo add-apt-repository -y ppa:neovim-ppa/unstable
@@ -42,7 +43,8 @@ python3 -m pip install msgpack
 # install gems for code checks
 
 for d in $HOME/src/github.com/Shopify/*; do
-  cd $d && sudo gem install neovim solargraph sorbet
+  sudo gem install neovim
+  cd $d && gem install solargraph sorbet
 done
 
 # rg
