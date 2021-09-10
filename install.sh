@@ -40,8 +40,7 @@ python3 -m pip install msgpack
 # install gems for code checks
 
 for d in $HOME/src/github.com/Shopify/*; do
-  sudo gem install neovim
-  cd $d && gem install solargraph sorbet
+  cd $d && sudo gem install neovim solargraph sorbet
 done
 
 # rg
