@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# :big-oof:
+# isospin seems to run the install script before dependencies like nix are installed 
+# or the repos have been checked out, trying to confirm with a loong sleep here
+sleep 60
+
 declare -r dotfile_dir="${PWD}"
 
 # tmux
@@ -26,7 +31,7 @@ else
   sudo apt-get install -y software-properties-common
   sudo add-apt-repository -y ppa:neovim-ppa/unstable
   sudo apt-get update
-  sudo apt-get install neovim
+  sudo apt-get install -y neovim
 
   # dependencies
   if ! command -v rg &> /dev/null; then
