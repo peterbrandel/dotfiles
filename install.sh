@@ -2,7 +2,8 @@
 
 declare -r dotfile_dir="${PWD}"
 
-export PATH=$PATH:$HOME/.nix-profile/bin
+# Source /etc/profile, it will set up nix, shadowenv and other goodies
+. /etc/profile
 
 # tmux
 cp tmux.conf $HOME/.tmux.conf
