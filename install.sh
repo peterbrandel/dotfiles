@@ -7,6 +7,8 @@ sleep 180
 
 declare -r dotfile_dir="${PWD}"
 
+export PATH=$PATH:$HOME/.nix-profile/bin
+
 # tmux
 cp tmux.conf $HOME/.tmux.conf
 mkdir -p $HOME/.tmux/plugins
