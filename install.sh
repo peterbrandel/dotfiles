@@ -53,6 +53,8 @@ sh nvim/installer.sh $HOME/.cache/dein
 python3 -m pip install neovim
 python3 -m pip install msgpack
 
+nvim --headless -c "call dein#install()" -c "qa"
+
 # install gems for code checks
 
 for d in $HOME/src/github.com/Shopify/*; do
