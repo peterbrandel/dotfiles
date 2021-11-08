@@ -33,6 +33,8 @@ sudo apt-get install -y python-dev python3-pip python3-dev python3-pip python3-n
 python3 -m pip install neovim
 python3 -m pip install msgpack
 
+nvim --headless -c "call dein#install()" -c "qa"
+
 # install gems for code checks
 
 for d in $HOME/src/github.com/Shopify/*; do
