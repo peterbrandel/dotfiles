@@ -50,5 +50,3 @@ git clone https://github.com/pebra/neovim-files-v2.git $HOME/.config/nvim
 # rg
 cp $dotfile_dir/rg/rgignore $HOME/.rgignore
 
-# neovim
-git clone https://github.com/pebra/kickstart.nvim ~/.config/nvim
