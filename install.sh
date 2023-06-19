@@ -2,8 +2,10 @@
 
 declare -r dotfile_dir="${PWD}"
 
+export PATH=$PATH:$HOME/.nix-profile/bin
 # Source /etc/profile, it will set up nix, shadowenv and other goodies
 . /etc/profile
+
 
 # tmux
 cp tmux.conf $HOME/.tmux.conf
@@ -21,9 +23,9 @@ cp -r bash/oh-my-bash $HOME/.oh-my-bash
 if [[ `systemctl` =~ -\.mount ]]; then
   # Some setup specifc to ISOSPIN
   nix-channel --update && nix upgrade-nix
-  xix-env -iA nixpkgs.gcc-unwrapped.lib
-  xix-env -iA nixpkgs.tree-sitter
-  nix-env -iA nixpkgs.neovim
+  # nix-env -iA nixpkgs.gcc-unwrapped.lib
+  # nix-env -iA nixpkgs.tree-sitter
+  # nix-env -iA nixpkgs.neovim
   nix-env -iA nixpkgs.fzf
   nix-env -iA nixpkgs.ripgrep
 fi
@@ -33,14 +35,15 @@ sudo apt-get install -y python-dev python3-pip python3-dev python3-pip python3-n
 python3 -m pip install neovim
 python3 -m pip install msgpack
 
-nvim --headless -c "call dein#install()" -c "qa"
+# nvim 
 
-# install gems for code checks
-for d in $HOME/src/github.com/Shopify/*; do
-  sudo gem install neovim
-  cd $d && gem install solargraph sorbet
-done
+sudo apt-get -y install ninja-build gettext cmake unzip curl
 
+git clone https://github.com/neovim/neovim.git
+cd neovim
+git checkout release-0.9
+make CMAKE_BUILD_TYPE=Release
+sudo make install
 
 git clone https://github.com/pebra/neovim-files-v2.git $HOME/.config/nvim
 
