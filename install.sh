@@ -46,19 +46,17 @@ fi
 
 sudo apt-get install -y python-dev python3-pip python3-dev python3-pip python3-neovim
 
-cp -r nvim ~/.config/nvim
-sh nvim/installer.sh $HOME/.cache/dein
 python3 -m pip install neovim
 python3 -m pip install msgpack
 
-nvim --headless -c "call dein#install()" -c "qa"
-
 # install gems for code checks
-
 for d in $HOME/src/github.com/Shopify/*; do
   sudo gem install neovim
   cd $d && gem install solargraph sorbet
 done
+
+
+git clone https://github.com/pebra/neovim-files-v2.git $HOME/.config/nvim
 
 # rg
 cp $dotfile_dir/rg/rgignore $HOME/.rgignore
