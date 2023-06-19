@@ -3,8 +3,6 @@
 # :big-oof:
 # isospin seems to run the install script before dependencies like nix are installed 
 # or the repos have been checked out, trying to confirm with a loong sleep here
-sleep 180
-
 declare -r dotfile_dir="${PWD}"
 
 # Source /etc/profile, it will set up nix, shadowenv and other goodies
