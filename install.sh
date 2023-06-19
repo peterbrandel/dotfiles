@@ -36,11 +36,13 @@ python3 -m pip install msgpack
 nvim --headless -c "call dein#install()" -c "qa"
 
 # install gems for code checks
-
 for d in $HOME/src/github.com/Shopify/*; do
   sudo gem install neovim
   cd $d && gem install solargraph sorbet
 done
+
+
+git clone https://github.com/pebra/neovim-files-v2.git $HOME/.config/nvim
 
 # rg
 cp $dotfile_dir/rg/rgignore $HOME/.rgignore
