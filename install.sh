@@ -41,8 +41,8 @@ sudo apt-get -y install ninja-build gettext cmake unzip curl
 
 git clone https://github.com/neovim/neovim.git
 cd neovim
-git checkout release-0.9
-make CMAKE_BUILD_TYPE=Release
+git checkout release-0.10
+make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
 git clone https://github.com/pebra/neovim-files-v2.git $HOME/.config/nvim
